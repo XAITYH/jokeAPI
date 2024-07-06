@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joke API practice</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="response">
+        <p><%= joke %></p>
+      </div>
+      <form id="myForm" method="post">
+        <input type="text" placeholder="Enter your name" name="yourName">
+        <input type="submit" formaction="/get-joke" value="Get joke">
+      </form>
+    </div>
+  </body>
+
+</html>
