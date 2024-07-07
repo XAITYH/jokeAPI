@@ -4,25 +4,25 @@ import express from "express";
 
 const app = express();
 const port = 3000;
+const API_URL = 'https://v2.jokeapi.dev/';
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", async (req, res) => {
-  res.render("index.ejs", { joke: "Waiting for the name..." });
+  res.render("index.ejs", { content: "Waiting for the name..." });
 });
 
 app.post("/get-joke", async (req, res) => {
-  const yourName = req.body.yourName;
+  let fname = '';
+  fname += req.body.fname;
   try {
     const result = await axios.get(
-      `https://v2.jokeapi.dev/joke/Any?contains=${yourName}`, req.body,
-      config
-    );
-    const jokeObj = await result.json();
-
-    res.render('index.ejs', { joke: jokeObj.joke });
+      `${API_URL}joke/Any?format=txt&contains=${fname}`)
+    // console.log(fname);
+    // console.log(result.data);
+    res.render('index.ejs', { content: result.data });
   } catch (error) {
-    res.render("index.ejs", { joke: JSON.stringify(error) });
+    res.render("index.ejs", { content: error.message });
   }
 });
 
