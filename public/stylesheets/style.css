@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #151320;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.response > p {
+  font-family: "Matemasie", sans-serif;
+  font-size: 24px;
+}
+
+#myForm {
+  margin-top: 20px;
+}
+
+.text {
+  display: block;
+  height: 2rem;
+  padding: 0.1rem 0.75rem;
+  font-family: "New Amsterdam", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+}
+
+.text::placeholder {
+  color: #212529;
+  opacity: 0.4;
+}
+
+.text:focus {
+  color: #212529;
+  outline: 0;
+}
+
+.submit {
+  border-radius: 1.2rem;
+  font-weight: bold;
+  font-family: "New Amsterdam", sans-serif;
+  font-size: 1rem;
+  margin-top: 20px;
+  height: calc(2.25rem + 2px);
+  transition: --anim 300ms ease;
+  width: 161px;
+  align-self: center;
+  letter-spacing: 2px;
+  overflow: hidden;
+  background-size: 100%;
+  border: none;
+  cursor: pointer;
+}
